@@ -1,0 +1,7 @@
+acl:
+    resource: "@ACLBundle/Resources/config/routing.yml"
+    prefix:   /
+
+acme_test:
+    resource: "@AcmeTestBundle/Resources/config/routing.yml"
+    prefix:   /

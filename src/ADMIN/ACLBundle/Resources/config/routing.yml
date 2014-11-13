@@ -1,0 +1,16 @@
+admin_acl:
+    path:     /admin/acl/{id}
+    defaults: { _controller: ACLBundle:ACL:index }
+
+login:
+    pattern:   /login
+    defaults:  { _controller: ACLBundle:ACL:login }
+login_check:
+    pattern:   /login_check
+
+logout:
+    path:   /logout
+
+productos:
+  path:     /productos/{id}
+  defaults: {_controller: ACLBundle:ACL:productos }

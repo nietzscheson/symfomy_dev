@@ -1,0 +1,18 @@
+Acme\DemoBundle\Entity\Nombres:
+    type: entity
+    table: null
+    repositoryClass: Acme\DemoBundle\Entity\NombresRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+        descripcion:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

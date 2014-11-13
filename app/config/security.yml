@@ -1,0 +1,23 @@
+# security:
+#     firewalls:
+#         secured_area:
+#             pattern:    ^/*
+#             anonymous: ~
+#             form_login:
+#               login_path: login
+#               check_path: login_check
+#
+#     access_control:
+#         - { path: ^/admin, roles: ROLE_ADMIN }
+#         - { path: ^/login_check, roles: ROLE_ADMIN }
+#         # Descomenta la siguiente línea para proteger también
+#         # la propia URL /admin
+#         # - { path: ^/admin$, roles: ROLE_ADMIN }
+#
+#     providers:
+#       main:
+#         entity: { class : ADMIN\ACLBundle\Entity\User, property: username }
+#
+#
+#     encoders:
+#         Symfony\Component\Security\Core\User\User: plaintext

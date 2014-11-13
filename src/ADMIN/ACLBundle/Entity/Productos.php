@@ -1,0 +1,153 @@
+<?php
+
+namespace ADMIN\ACLBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Productos
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ADMIN\ACLBundle\Entity\ProductosRepository")
+ */
+class Productos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="producto", type="string", length=255)
+     */
+    private $producto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="precio", type="string", length=255)
+     */
+    private $precio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", length=255)
+     */
+    private $descripcion;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set producto
+     *
+     * @param string $producto
+     * @return Productos
+     */
+    public function setProducto($producto)
+    {
+        $this->producto = $producto;
+
+        return $this;
+    }
+
+    /**
+     * Get producto
+     *
+     * @return string
+     */
+    public function getProducto()
+    {
+        return $this->producto;
+    }
+
+    /**
+     * Set precio
+     *
+     * @param string $precio
+     * @return Productos
+     */
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    /**
+     * Get precio
+     *
+     * @return string
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     * @return Productos
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Categorias", inversedBy="productos")
+     * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
+     */
+    protected $categoria;
+
+    /**
+     * Set categoria
+     *
+     * @param \ADMIN\ACLBundle\Entity\Categorias $categoria
+     * @return Productos
+     */
+    public function setCategoria(\ADMIN\ACLBundle\Entity\Categorias $categoria = null)
+    {
+        $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    /**
+     * Get categoria
+     *
+     * @return \ADMIN\ACLBundle\Entity\Categorias 
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
+}

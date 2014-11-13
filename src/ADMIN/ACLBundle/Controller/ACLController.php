@@ -47,6 +47,9 @@ class ACLController extends Controller
       $em = $this->getDoctrine()->getManager();
       $categoria = $em->getRepository("ACLBundle:Categorias")->find($id);
 
+      // $categoria = new Entity\Categorias();
+      // $categoria->setCategoria("Nombre de la categoría");
+
       $producto = new Entity\Productos();
       $producto->setProducto("Segundo carro");
       $producto->setPrecio(19.19);
